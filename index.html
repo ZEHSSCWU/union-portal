@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Officials Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-card" class="card center-card">
+        <h2>Union Officials Portal Login</h2>
+        <form id="login-form" autocomplete="off">
+            <label for="official-id">Official ID</label>
+            <input type="text" id="official-id" required autofocus>
+            <label for="official-pass">Password</label>
+            <input type="password" id="official-pass" required>
+            <button type="submit" class="btn primary">Login</button>
+            <div id="login-error" class="error-msg"></div>
+        </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+        <header class="dashboard-header">
+            <h1>Union Officials Portal</h1>
+            <div id="official-info"></div>
+            <button id="logout-btn" class="btn">Logout</button>
+        </header>
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="institution-summary">Institution Summary</button>
+            <button class="tab-btn" data-tab="member-lookup">Member Lookup</button>
+            <button class="tab-btn" data-tab="add-member">Add Member</button>
+        </nav>
+        <main>
+            <!-- Institution Summary Tab -->
+            <section id="institution-summary" class="tab-content">
+                <div class="card">
+                    <h2>Institution Summary</h2>
+                    <label for="institution-select">Select Institution</label>
+                    <select id="institution-select">
+                        <option value="">Loading...</option>
+                    </select>
+                    <div id="institution-details" class="inst-summary"></div>
+                </div>
+                <div class="card">
+                    <h3>Members in Institution</h3>
+                    <div id="members-list"></div>
+                </div>
+            </section>
+
+            <!-- Member Lookup Tab -->
+            <section id="member-lookup" class="tab-content hidden">
+                <div class="card">
+                    <h2>Member Lookup</h2>
+                    <input type="text" id="member-search" placeholder="Type member name..." autocomplete="off">
+                    <div id="member-search-results"></div>
+                </div>
+            </section>
+
+            <!-- Add Member Tab -->
+            <section id="add-member" class="tab-content hidden">
+                <div class="card">
+                    <h2>Add Member</h2>
+                    <form id="add-member-form">
+                        <div class="form-grid">
+                            <div>
+                                <label>Full Name</label>
+                                <input type="text" name="fullName" required>
+                            </div>
+                            <div>
+                                <label>National ID</label>
+                                <input type="text" name="nationalId" required>
+                            </div>
+                            <div>
+                                <label>Date of Birth</label>
+                                <input type="date" name="dob" required>
+                            </div>
+                            <div>
+                                <label>Gender</label>
+                                <select name="gender" required>
+                                    <option value="">Select</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Job Title</label>
+                                <input type="text" name="jobTitle" required>
+                            </div>
+                            <div>
+                                <label>Grade</label>
+                                <input type="text" name="grade" required>
+                            </div>
+                            <div>
+                                <label>Institution</label>
+                                <input type="text" name="institution" required>
+                            </div>
+                            <div>
+                                <label>Date Joined</label>
+                                <input type="date" name="dateJoined" required>
+                            </div>
+                            <div>
+                                <label>Contact Number</label>
+                                <input type="tel" name="contactNumber" required>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <input type="text" name="status" required>
+                            </div>
+                            <div>
+                                <label>Position in Union</label>
+                                <input type="text" name="positionInUnion" required>
+                            </div>
+                            <div>
+                                <label>Branch</label>
+                                <input type="text" name="branch" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn primary">Add Member</button>
+                        <div id="add-member-success" class="success-msg"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
